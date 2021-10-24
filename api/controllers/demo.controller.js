@@ -6,7 +6,7 @@ exports.getDemo = async function (req, res, next) {
   try {
     const demo = await DemoService.getDemo({}, 0, 1);
     console.log('ENTER_TO_CONTROLLER_2::', demo);
-    return res.send(`${demo.name}`);
+    return res.send(demo);
 
     // return res.status(200).json({ status: 200, data: users, message: "Succesfully Users Retrieved" });
   } catch (e) {
