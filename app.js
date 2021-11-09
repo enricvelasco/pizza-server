@@ -7,6 +7,7 @@ const admin = require('firebase-admin');
 const {port} = require('./config/environment');
 const router = require('./api/routes/demo.route')
 const demo2router = require('./api/routes/demo2.route')
+const auth = require('./api/routes/auth.route')
 
 const app = express()
 
@@ -35,7 +36,11 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
-app.use(router, demo2router);
+app.use(
+  router,
+  demo2router,
+  auth
+);
 
 
 // app.use('/', router);

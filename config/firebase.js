@@ -6,7 +6,9 @@ admin.initializeApp({
 });
 
 const firestore = admin.firestore();
+const auth = admin.auth();
 
 module.exports = {
   firestore,
+  auth
 }
